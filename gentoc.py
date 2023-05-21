@@ -36,8 +36,21 @@ class Header:
 def main():
     print("# Table of contents\n")
 
+    in_code = False
+
     with open(sys.argv[1], "r") as f:
         for line in f.readlines():
+            if line.startswith("```") and not in_code:
+                in_code = True
+                continue
+
+            if line.startswith("```") and in_code:
+                in_code = False
+                continue
+
+            if in_code:
+                continue
+
             if line.startswith("#"):
                 print(Header(line).toc_line())
 
