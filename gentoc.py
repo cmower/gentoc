@@ -7,7 +7,7 @@ Generate table of contents from README.md.
 
 Usage
 
-$ python gentoc /path/to/README.md
+$ python gentoc.py /path/to/README.md
 
 Copy, paste the output to your README.md file.
 
