@@ -26,7 +26,7 @@ class Header:
 
     def link(self):
         title = self.title().lower().replace(" ", "-").replace(",", "").replace(".", "")
-        return f"[{self.title()}](#{title})"
+        return f"[{self.title()}](#{title.replace('+', '')})"
 
     def toc_line(self):
         n = self.level() - 1
